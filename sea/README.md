@@ -1,6 +1,4 @@
 # Sea
 
-- - -
-
-### Languages
-- [zh-cn](zh-cn)
+- [repo](https://github.com/shanbay/sea)
+- [docs(zh-cn)](sea/zh-cn)

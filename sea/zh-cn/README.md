@@ -1,22 +1,9 @@
-# Welcome to sea's documentation!
+# 关于 Sea
 
-- - -
+`Sea` 由 [扇贝](https://www.shanbay.com) 的后端团队开发，是一个基于 [GRPC](https://grpc.io/) 的 framework。
 
-### Installation:
-```
-pip install sea
-```
-This will allow you to keep up to date with development on GitHub::
-```
-pip install -U git+https://github.com/shanbay/sea.git
-```
+`GRPC` 是RPC的一种协议和实现，然而要开发完整的项目，除了协议层面，还有大量的业务逻辑需要编写。开发`Sea`的目的正是是方便大家更方便的编写这些代码。
 
+`Sea` 核心包含了配置管理，项目初始化，测试框架，中间件，服务日志等内容。
 
-### User Guide
-
-read the docs step by step
-
-
-### API Reference
-
-If you are looking for information on a specific function, class or method, this part of the documentation is for you.
+同时`Sea`还有一套 “扩展(extension)”机制。方便开发者/社区扩展`Sea`。 此外我们内置了一些扩展，包括 ORM，缓存，异步任务，异常报警等。

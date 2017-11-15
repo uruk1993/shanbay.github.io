@@ -1,10 +1,11 @@
-# QuickStart
+# 快速入门
 
 - - -
 
 让我们来创建第一个项目 helloworld:
+
 ```
-sea new helloworld
+$ sea new --skip-orator --skip-cache --skip-celery --skip-sentry helloworld
 ```
 
 这条命令会自动生成以下目录及文件:
@@ -13,20 +14,15 @@ sea new helloworld
 ├── app
 │   ├── extensions.py
 │   ├── __init__.py
-│   ├── models.py
 │   ├── servicers.py
-│   └── tasks.py
 ├── configs
 │   ├── default
-│   │   ├── celery.py
 │   │   ├── __init__.py
-│   │   └── orator.py
 │   ├── development
 │   │   └── __init__.py
 │   ├── __init__.py
 │   └── testing
 │       └── __init__.py
-├── db
 ├── jobs
 │   └── __init__.py
 ├── protos
@@ -35,7 +31,10 @@ sea new helloworld
     └── __init__.py
 ```
 
-创建 protos/helloworld.proto 文件:
+> 关于项目结构的更多说明，请参照文档[项目结构](structure)
+
+创建 `/path/to/protos/helloworld.proto` 文件:
+
 ```
 syntax = "proto3";
 
@@ -58,7 +57,14 @@ message HelloReply {
 }
 ```
 
-运行 sea generate -I . helloworld.proto 命令后, protos 目录下会生成 proto 文件对应的 Python 版本 这条命令的第一个参数是 proto 文件所在的目录，第二个参数是 proto 文件的名字:
+运行
+
+```
+$ sea generate -I /path/to/protos/ helloworld.proto
+```
+
+protos 目录下会生成 proto 文件对应的 Python 版本 这条命令的第一个参数是 proto 文件所在的目录，第二个参数是 proto 文件的名字:
+
 ```
 protos
 ├── helloworld_pb2_grpc.py
@@ -66,7 +72,8 @@ protos
 ```
 
 使用下面的内容重写 app/servicer.py:
-```
+
+```python
 import helloworld_pb2
 import helloworld_pb2_grpc
 
@@ -79,10 +86,14 @@ class HelloworldServicer(helloworld_pb2_grpc.GreeterServicer, metaclass=Servicer
         return helloworld_pb2.HelloReply(message='Hello, %s!' % request.name)
 ```
 
-运行 sea server --host 127.0.0.1，host 参数是你的发布端口，client 可以通过此端口来找到你。这样 server 就已经运行起来了
+运行
+```
+sea server
+```
 
 然后创建 client:
-```
+
+```python
 import grpc
 
 import helloworld_pb2
@@ -102,4 +113,6 @@ if __name__ == '__main__':
 
 运行这段代码，你会发现成功地收到 server 端的 echo
 
-    Greeter client received: Hello, you!
+```
+Greeter client received: Hello, you!
+```
