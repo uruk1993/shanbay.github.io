@@ -1,9 +1,16 @@
-## :)
 > 知识不是一般的商品，买回来不是你的，放书架上不是你的，存硬盘上也不是你的；只有累过，烦过，咬牙切齿过，山穷水尽过，柳暗花明过，才会是你的.
----- [扇贝网](https://www.shanbay.com)
+> ---- [扇贝网](https://www.shanbay.com)
 
-## Source of Shanbay
-- [Documents](docs)
+## Projects
 
-## Reference
-- [docsify](https://docsify.js.org/#/)
+### Sea
+
+- [repo](https://github.com/shanbay/sea)
+- [docs(zh-cn)](sea/zh-cn)
+
+### Sorator
+- [repo](https://github.com/shanbay/sorator)
+- [docs(zh-cn)](sorator/zh-cn)
+
+
+Powered by [docsify](https://docsify.js.org/#/)
