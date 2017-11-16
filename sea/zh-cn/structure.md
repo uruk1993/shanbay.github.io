@@ -36,18 +36,55 @@
     └── __init__.py
 ```
 
-### `app`
+### app
 
-`__init__.py`
+`app` 目录中包含项目的主体代码，其中最核心的是 `__init__.py`, `extensions.py`, `servicers.py`
+
+> `__init__.py`:
+
+定义了一个继承自 `sea.app.BaseApp` 的类： `App`
+
+可以通过覆盖父类的方法，覆盖 `App` 的行为，也可以通过实现 `hook` 方法，定制初始化过程，例如定义 `ready` 方法，该方法会在`App` 初始化完成后执行。
+
+关于 `sea.app.BaseApp` 的详细接口，请参见文档：[App](app)
+
+> `extensions.py`:
+
+声明了项目需要的 "扩展"，`sea` 支持通过 "扩展" 的方式来集成第三方的库，例如 orm, cache 等等。
+每个扩展往往包括一个主类和需要的相应的配置，在 `extensions.py`中实力化这个类，并在项目中设置好这些配置，就可以使用了。
+
+以内建的 `Cache` 为例：
 
 `extensions.py`
 
-`servicers.py`
+```python
+from sea.contrib.extensions.cache import Cache
+cache = Cache()
+```
 
-### `configs`
+使用方法一：
 
-### `jobs`
+```python
+from sea import current_app
+current_app.extensions['cache']
+```
 
-### `protos`
+使用方法二：
 
-### `tests`
+```python
+from app.extensions import cache
+```
+
+关于 extension 的更多内容，请参见文档：[扩展](extension)
+
+> `servicers.py`:
+
+定义了 GRPC 的 Service
+
+### configs
+
+### jobs
+
+### protos
+
+### tests
