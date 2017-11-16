@@ -79,12 +79,31 @@ from app.extensions import cache
 
 > `servicers.py`:
 
-定义了 GRPC 的 Service
+定义了 GRPC 的 Servicer，继承自根据 proto 文件生成的同名 Servicer 类，并以 `sea.servicer.ServicerMeta` 为 metaclass。例如：
+
+```python
+from sea.servicer import ServicerMeta
+class GreedServicer(greed_pb2_grpc.GreedServicer, metaclass=ServicerMeta):
+    def SayHello(self, request, context):
+        return greed_pb2.Message(msg='Hello')
+```
 
 ### configs
 
+根据不同的使用环境(例如: development, testing, production)分组存放的配置文件，实际执行的时候，会根据 `SEA_ENV` 的值加载同名的配置。
+
+配置均为正常的 `py` 文件。
+
+主要配置，请参见文档：[项目配置](configuration)
+
 ### jobs
+
+包含项目的自定义命令，关于命令的定义和调用方法，请参考文档：[自定义命令](cmd)
 
 ### protos
 
+根据 proto 文件生成的 `py` 文件，一般一个 proto 文件会生产两个 `py` 文件。
+
 ### tests
+
+包含项目的相关测试。关于如何编写和运行测试，请参考文档：[测试](testing)
