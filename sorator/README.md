@@ -3,4 +3,4 @@
 - - -
 
 ### Languages
-- [zh-cn](zh-cn)
+- [cn](cn)

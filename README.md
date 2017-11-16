@@ -6,11 +6,11 @@
 ### Sea
 
 - [repo](https://github.com/shanbay/sea)
-- [docs(zh-cn)](sea/zh-cn)
+- [docs(cn)](sea/cn)
 
 ### Sorator
 - [repo](https://github.com/shanbay/sorator)
-- [docs(zh-cn)](sorator/zh-cn)
+- [docs(cn)](sorator/cn)
 
 
 Powered by [docsify](https://docsify.js.org/#/)

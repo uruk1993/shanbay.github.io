@@ -11,4 +11,4 @@ A framework for GRPC
 
 ## Documents
 
-- [docs(zh-cn)](zh-cn)
+- [docs(cn)](cn)
