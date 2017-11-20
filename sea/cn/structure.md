@@ -51,13 +51,13 @@
 > `extensions.py`:
 
 声明了项目需要的 "扩展"，`sea` 支持通过 "扩展" 的方式来集成第三方的库，例如 orm, cache 等等。
-每个扩展往往包括一个主类和需要的相应的配置，在 `extensions.py`中实力化这个类，并在项目中设置好这些配置，就可以使用了。
+每个扩展往往包括一个“扩展类”和需要的相应的配置，在 `extensions.py`中实力化这个“扩展类”，并在项目中设置好这些配置，就可以使用了。
 
-以内置的 `Cache` 为例：
+以内置的 `cache` 扩展为例：
 
-`extensions.py`
 
 ```python
+# extensions.py
 from sea.contrib.extensions.cache import Cache
 cache = Cache()
 ```
@@ -66,7 +66,7 @@ cache = Cache()
 
 ```python
 from sea import current_app
-current_app.extensions['cache']
+current_app.extensions.cache
 ```
 
 使用方法二：

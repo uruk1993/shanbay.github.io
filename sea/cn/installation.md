@@ -1,11 +1,11 @@
 # 安装
 
-## 安装 `python`
+## 安装 python
 
-`sea` 需要 `python 3`，如何安装 `python 3`
+`sea` 需要 `python 3`，如何安装 `python 3`?
 
-1.可以参考 `python`的官方网站：[https://www.python.org/](https://www.python.org/)
-2.可以使用 `pyenv`: [https://github.com/pyenv/pyenv](https://github.com/pyenv/pyenv)
+1. 可以参考 `python`的官方网站：[https://www.python.org/](https://www.python.org/)
+2. 可以使用 `pyenv`: [https://github.com/pyenv/pyenv](https://github.com/pyenv/pyenv)
 
 
 ## 安装 `sea`
