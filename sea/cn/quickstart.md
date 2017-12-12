@@ -57,6 +57,8 @@ message HelloReply {
 }
 ```
 
+> 关于proto语法的更多说明，请参照文档[protocol-buffers](https://developers.google.com/protocol-buffers/docs/overview)
+
 运行
 
 ```
