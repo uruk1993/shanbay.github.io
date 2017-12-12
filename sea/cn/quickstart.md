@@ -14,7 +14,7 @@ $ sea new --skip-orator --skip-cache --skip-celery --skip-sentry helloworld
 ├── app
 │   ├── extensions.py
 │   ├── __init__.py
-│   ├── servicers.py
+│   └── servicers.py
 ├── configs
 │   ├── default
 │   │   ├── __init__.py

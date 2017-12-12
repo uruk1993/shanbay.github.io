@@ -19,7 +19,7 @@
 ├── app
 │   ├── extensions.py
 │   ├── __init__.py
-│   ├── servicers.py
+│   └── servicers.py
 ├── configs
 │   ├── default
 │   │   ├── __init__.py
@@ -83,9 +83,9 @@ from app.extensions import cache
 
 ```python
 from sea.servicer import ServicerMeta
-class GreedServicer(greed_pb2_grpc.GreedServicer, metaclass=ServicerMeta):
+class GreeterServicer(greeter_pb2_grpc.GreeterServicer, metaclass=ServicerMeta):
     def SayHello(self, request, context):
-        return greed_pb2.Message(msg='Hello')
+        return greeter_pb2.Message(msg='Hello')
 ```
 
 ### configs
